@@ -1,16 +1,14 @@
 <%= form_with(model: @task, remote: true) do |form| %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :task_description %>
+  <div class="form-group">
+    <%= form.text_field :description, placeholder: "tasks description", class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :deadline %>
-    <%= form.datetime_select :deadline, id: :task_deadline %>
+  <div class="form-group">
+    <%= form.text_field :deadline, id: :datetimepicker1, placeholder: "When is it due?", class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Task", class: "btn btn-info" %>
   </div>
 <% end %>

@@ -1,20 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 
+<div class="row">
+  <div class="col-md-3">
+      <%= link_to new_task_path, remote: true do %>
+          <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> Add Task </button>
+      <% end %>
 
-<%= link_to 'New Task', new_task_path, remote: true %>
+      <div id="task-form" style="display:none;"></div> 
+  </div>
 
-<div id="task-form" style="display:none;"></div>
+  <div class="col-md-8"> 
+    <h2>Heather's Tasks</h2>
+    <div id="tasks">
+      <div class="row">
+        <%= render @tasks %>
+      </div>
+    </div>
+  </div>
 
-<h1>To Do List:</h1>
-
-<div id="tasks">
-  <%= render @tasks %>
 </div>
-
-<br>
-
-
 
 
 
